@@ -43,7 +43,7 @@ for dir in $SUBDIRS ; do
         echo "Creating dir: $thisDir"
         mkdir -p "$thisDir"
     fi
-    if ! [[chown -R arm:arm "$thisDir"]]; then
+    if ! [[ chown -R arm:arm "$thisDir" ]]; then
         # if a user is using a network drive that disallows chown
         echo "Unable to chown dir: $thisDir"
     fi
