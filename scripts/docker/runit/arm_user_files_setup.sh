@@ -43,7 +43,9 @@ for dir in $SUBDIRS ; do
         echo "Creating dir: $thisDir"
         mkdir -p "$thisDir"
     fi
-    chown -R arm:arm "$thisDir"
+    if ! [[chown -R arm:arm "$thisDir"]]; then
+        echo "Unable to chown dir: $thisDir"
+    fi
 done
 
     ##### Setup ARM-specific config files if not found
