@@ -44,6 +44,7 @@ for dir in $SUBDIRS ; do
         mkdir -p "$thisDir"
     fi
     if ! [[chown -R arm:arm "$thisDir"]]; then
+        # if a user is using a network drive that disallows chown
         echo "Unable to chown dir: $thisDir"
     fi
 done
